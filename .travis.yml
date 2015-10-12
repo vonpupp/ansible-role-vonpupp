@@ -21,7 +21,7 @@ arch:
 
 sc#ript:
   - "bash .travis/arch-travis.sh"
-    #- python2 --version
+
   - pip2 install ansible>=1.6.0
 
   - echo localhost > inventory
