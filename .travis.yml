@@ -21,9 +21,8 @@ arch:
 
 script:
   - "bash .travis/arch-travis.sh"
-  - "bash pacman -R python3-pip python3"
-  - "bash pacman -S python2 python2-pip"
-  - "bash pip install ansible>=1.6.0"
+  - "bash python --version"
+  - "bash pip2 --version"
 
   - echo localhost > inventory
 
