@@ -47,5 +47,9 @@ BSD
 
 ## Author Information
 
-Bert Van Vreckem (bert.vanvreckem@gmail.com)
+@vonpupp
 
+## Based on the Ansible [skeleton] and the [script] from: Bert Van Vreckem (bert.vanvreckem@gmail.com)
+
+[skeleton]: https://github.com/bertvv/ansible-role-skeleton
+[script]: https://github.com/bertvv/scripts/blob/master/src/role-skel.sh
