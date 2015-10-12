@@ -15,6 +15,7 @@ arch:
     - papyros-shell
     - python2
     - python2-pip
+    - ansible
   script:
     - "sudo archey3"
     - "reflector --verbose -l 20 --sort rate -p https"
@@ -22,7 +23,8 @@ arch:
 script:
   - "bash .travis/arch-travis.sh"
 
-  - pip2 install ansible>=1.6.0
+    #- pip2 install ansible>=1.6.0
+  - pip2 install ansible -v
 
   - echo localhost > inventory
 
