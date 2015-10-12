@@ -13,9 +13,28 @@ arch:
     - archey3-git
     # papyros
     - papyros-shell
+    - ansible
   script:
     - "sudo archey3"
     - "reflector --verbose -l 20 --sort rate -p https"
 
 script:
   - "bash .travis/arch-travis.sh"
+
+  - echo localhost > inventory
+
+  # Check syntax
+  - ansible-playbook --syntax-check -i inventory test.yml
+
+  # First run
+  - ansible-playbook -i inventory test.yml --connection=local --sudo
+
+  # Second run Idempotence test
+  - >
+    ansible-playbook -i inventory test.yml --connection=local --sudo
+    | grep -q 'changed=0.*failed=0'
+    && (echo 'Idempotence test: pass' && exit 0)
+    || (echo 'Idempotence test: fail' && exit 1)
+
+  # Check fog nginx is running
+  #- curl http://127.0.0.1/ | grep Active || exit 1
