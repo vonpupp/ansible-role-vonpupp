@@ -21,7 +21,8 @@ arch:
 
 script:
   - "bash .travis/arch-travis.sh"
-  - "bash python --version"
+  - "bash python3 --version"
+  - "bash python2 --version"
   - "bash pip2 --version"
 
   - echo localhost > inventory
