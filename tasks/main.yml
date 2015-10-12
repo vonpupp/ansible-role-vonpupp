@@ -1,0 +1,16 @@
+# roles/personal/tasks/main.yml
+---
+
+- name: Install packages
+  yum:
+    pkg: "{{ item }}"
+    state: installed
+  with_items: personal_packages
+  tags: personal
+
+- name: Ensure service is started
+  service:
+    name: "{{ personal_service }}"
+    state: started
+    enabled: true
+  tags: personal

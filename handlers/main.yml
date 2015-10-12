@@ -1,0 +1,7 @@
+# roles/personal/handlers/main.yml
+---
+
+- name: restart personal
+  service:
+    name: personald
+    state: restarted

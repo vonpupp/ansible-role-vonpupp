@@ -1,0 +1,7 @@
+# roles/personal/vars/main.yml
+---
+
+personal_packages:
+  - personal
+
+personal_service: personald
