@@ -19,7 +19,7 @@ arch:
     - "sudo archey3"
     - "reflector --verbose -l 20 --sort rate -p https"
 
-sc#ript:
+script:
   - "bash .travis/arch-travis.sh"
 
   - pip2 install ansible>=1.6.0
