@@ -2,9 +2,9 @@
 ---
 
 - name: Install packages
-  yum:
-    pkg: "{{ item }}"
-    state: installed
+  pacman:
+    name: "{{ item }}"
+    state: present
   with_items: personal_packages
   tags: personal
 
