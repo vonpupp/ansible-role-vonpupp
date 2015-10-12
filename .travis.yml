@@ -24,7 +24,7 @@ script:
   - "bash .travis/arch-travis.sh"
 
     #- pip2 install ansible>=1.6.0
-  - pip2 install ansible -v
+  - pip2 install --user ansible -v
 
   - echo localhost > inventory
 
