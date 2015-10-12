@@ -1,5 +1,7 @@
 # Ansible role `personal`
 
+Build Status (master): [![Travis BuildStatus](https://travis-ci.org/vonpupp/ansible-role-vonpupp.svg?branch=master)](https://travis-ci.org/vonpupp/ansible-role-vonpupp)
+
 An Ansible role for PURPOSE. Specifically, the responsibilities of this role are to:
 
 -
@@ -47,9 +49,10 @@ BSD
 
 ## Author Information
 
-@vonpupp
+[vonpupp]
 
-## Based on the Ansible [skeleton] and the [script] from: Bert Van Vreckem (bert.vanvreckem@gmail.com)
+Based on the Ansible [skeleton] and the [script] from: Bert Van Vreckem (bert.vanvreckem@gmail.com)
 
+[vonpupp]: https://github.com/vonpupp
 [skeleton]: https://github.com/bertvv/ansible-role-skeleton
 [script]: https://github.com/bertvv/scripts/blob/master/src/role-skel.sh
