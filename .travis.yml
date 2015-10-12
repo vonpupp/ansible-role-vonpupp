@@ -19,14 +19,10 @@ arch:
     - "sudo archey3"
     - "reflector --verbose -l 20 --sort rate -p https"
 
-script:
+sc#ript:
   - "bash .travis/arch-travis.sh"
-  - python3 --version
-  - python2 --version
-  - python --version
-  - pip3 --version
-  - pip2 --version
-  - pip --version
+    #- python2 --version
+  - pip2 install ansible>=1.6.0
 
   - echo localhost > inventory
 
