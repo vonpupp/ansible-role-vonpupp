@@ -2,6 +2,6 @@
 ---
 
 personal_packages:
-  - personal
+  - ntp
 
-personal_service: personald
+personal_service: ntpd
