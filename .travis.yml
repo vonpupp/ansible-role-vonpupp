@@ -20,7 +20,7 @@ arch:
     - "reflector --verbose -l 20 --sort rate -p https"
 
 install:
-  - pip install ansible>=1.6.0
+  - pip2 install ansible>=1.6.0
 
 script:
   - "bash .travis/arch-travis.sh"
