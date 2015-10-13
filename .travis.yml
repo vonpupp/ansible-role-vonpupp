@@ -8,12 +8,12 @@ arch:
     - xyne-any=http://xyne.archlinux.ca/repos/xyne
     - papyros=http://dash.papyros.io/repos/$repo/$arch
   packages:
+    - pacman
     - reflector
     # aur
     - archey3-git
     # papyros
     - papyros-shell
-    - python2
     - python2-pip
     - ansible
   script:
