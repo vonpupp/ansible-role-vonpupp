@@ -20,29 +20,30 @@ arch:
     - "sudo archey3"
     - "reflector --verbose -l 20 --sort rate -p https"
 
+    #- pip2 install ansible>=1.6.0
+    - pip2 install --user ansible
+
+    - echo localhost > inventory
+
+    # Check syntax
+    - ansible-playbook --syntax-check -i inventory tests/test.yml
+
+    # First run
+    - ansible-playbook -i inventory tests/test.yml --connection=local --sudo -vvv
+
+    # Second run Idempotence test
+    - >
+        ansible-playbook -i inventory tests/test.yml --connection=local --sudo
+        | grep -q 'changed=0.*failed=0'
+        && (echo 'Idempotence test: pass' && exit 0)
+        || (echo 'Idempotence test: fail' && exit 1)
+
+    - which bash
+    - which pacman
+
+    # Check fog nginx is running
+    #- curl http://127.0.0.1/ | grep Active || exit 1
+
 script:
   - "bash .travis/arch-travis.sh"
 
-    #- pip2 install ansible>=1.6.0
-  - pip2 install --user ansible
-
-  - echo localhost > inventory
-
-  # Check syntax
-  - ansible-playbook --syntax-check -i inventory tests/test.yml
-
-  # First run
-  - ansible-playbook -i inventory tests/test.yml --connection=local --sudo -vvv
-
-  # Second run Idempotence test
-  - >
-    ansible-playbook -i inventory tests/test.yml --connection=local --sudo
-    | grep -q 'changed=0.*failed=0'
-    && (echo 'Idempotence test: pass' && exit 0)
-    || (echo 'Idempotence test: fail' && exit 1)
-
-  - which bash
-  - which pacman
-
-  # Check fog nginx is running
-  #- curl http://127.0.0.1/ | grep Active || exit 1
