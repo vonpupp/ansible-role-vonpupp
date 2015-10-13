@@ -32,7 +32,7 @@ script:
   - ansible-playbook --syntax-check -i inventory tests/test.yml
 
   # First run
-  - ansible-playbook -i inventory tests/test.yml --connection=local --sudo
+  - ansible-playbook -i inventory tests/test.yml --connection=local --sudo -vvv
 
   # Second run Idempotence test
   - >
