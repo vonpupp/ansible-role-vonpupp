@@ -8,7 +8,7 @@ arch:
     - xyne-any=http://xyne.archlinux.ca/repos/xyne
     - papyros=http://dash.papyros.io/repos/$repo/$arch
   packages:
-    - pacman
+    - base
     - reflector
     # aur
     - archey3-git
